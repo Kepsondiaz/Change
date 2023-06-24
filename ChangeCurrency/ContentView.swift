@@ -36,7 +36,7 @@ struct ContentView: View {
         }
         
         if (choiceCurency=="₦" && choiceCurrencyChange=="XOF") {
-            return amount * 650
+            return amount * 0.37
         }
         
         return amount
@@ -50,7 +50,7 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section {
-                    Picker("currency", selection: $choiceCurency) {
+                    Picker("Select currency", selection: $choiceCurency) {
                         ForEach(curency, id: \.self) {
                             Text($0)
                         }
@@ -62,7 +62,7 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Picker("currency", selection: $choiceCurrencyChange) {
+                    Picker("Change to", selection: $choiceCurrencyChange) {
                         ForEach(curency, id: \.self) {
                             Text($0)
                         }
